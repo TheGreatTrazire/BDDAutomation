@@ -1,12 +1,12 @@
 Feature: Create transaction with non-instant payment for one-way trip, xx adults and xx infants and select seats
-#  Scenario: Login with valid email and password
-#    Given User is on tiket homepage
-#    Then User goes to login page
-#    Then User input valid email
-#    Then User click Lanjutkan button
-#    Then User input valid password
-#    Then User click Log in button
-#    Then User should go to homepage
+  Scenario: Login with valid email and password
+    Given User is on tiket homepage
+    Then User goes to login page
+    Then User input valid email
+    Then User click Lanjutkan button
+    Then User input valid password
+    Then User click Log in button
+    Then User should go to homepage
 
   Scenario: Create one-way Trip Transaction for Train
     Given User is on tiket homepage
@@ -23,7 +23,7 @@ Feature: Create transaction with non-instant payment for one-way trip, xx adults
     And Verify detail payment page (VA Number)
     Then User should go to homepage
 
-#  Scenario: Logout Account
-#    Given User is on tiket homepage
-#    Then User click account header
-#    And User click keluar button
+  Scenario: Logout Account
+    Given User is on tiket homepage
+    Then User click account header
+    And User click keluar button

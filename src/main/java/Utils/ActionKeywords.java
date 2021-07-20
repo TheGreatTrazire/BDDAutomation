@@ -38,4 +38,13 @@ public class ActionKeywords extends SeleniumSetup{
         findElementXpath(id_xpath).sendKeys(text);
         Thread.sleep(1000);
     }
+
+    public void verifyElementVisible(String id_xpath) throws Exception{
+        boolean find =  drive.findElement(By.xpath(id_xpath)).isDisplayed();
+
+        if(!find){
+            throw new java.lang.RuntimeException("Element is not visible");
+        }
+        Thread.sleep(1000);
+    }
 }

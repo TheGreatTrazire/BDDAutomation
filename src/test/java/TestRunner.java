@@ -11,14 +11,15 @@ import java.util.Properties;
 @CucumberOptions(
         monochrome = true,
         features = {
-                "src/test/resources/features/login.feature"
+                "src/test/resources/features/ProductFlight.feature"
+//                "src/test/resources/features/ProductTrain.feature"
         },
         glue = {
                 "stepDefinition"
         },
         plugin = {
                 "pretty",
-                "html:target/cucumber-html-report"
+                "html:target/cucumber-html-report.html"
         }
 )
 public class TestRunner {
@@ -26,7 +27,7 @@ public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
     public SeleniumSetup selen = new SeleniumSetup();
 
-    @BeforeSuite
+    @BeforeTest
     public void openBrowserSelenium() throws Exception{
         FileInputStream fis = new FileInputStream("src//test//resources//props.properties");
         props.load(fis);
@@ -54,7 +55,7 @@ public class TestRunner {
             this.testNGCucumberRunner.finish();
         }
     }
-    @AfterSuite
+    @AfterTest
     public void close()
     {
         selen.closeBrowser();

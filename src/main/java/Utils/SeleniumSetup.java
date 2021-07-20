@@ -5,13 +5,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumSetup {
-    protected ChromeDriver drive;
-    protected ChromeOptions options;
-    protected WebDriverWait wait;
+    protected static ChromeDriver drive;
+    protected static ChromeOptions options;
+    protected static WebDriverWait wait;
+
+    public static ChromeDriver getDriver(){
+        return drive;
+    }
 
     public void openBrowser(String site) throws Exception{
         options = new ChromeOptions();
-        options.addArguments("--window-size\\=1440,900", "--disable-extensions", "--no-sandbox" , "--ignore-ssl-errors");
+        options.addArguments("--start-maximized", "--disable-extensions", "--no-sandbox" , "--ignore-ssl-errors");
         drive = new ChromeDriver(options);
         drive.get(site);
         Thread.sleep(1000);
@@ -22,6 +26,11 @@ public class SeleniumSetup {
 
     public void acceptAlert() throws Exception{
         drive.switchTo().alert().accept();
+        Thread.sleep(1000);
+    }
+
+    public void goesToSite(String site) throws Exception{
+        drive.navigate().to(site);
         Thread.sleep(1000);
     }
 }

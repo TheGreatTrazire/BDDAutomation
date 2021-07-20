@@ -9,11 +9,12 @@ public class SeleniumSetup {
     protected ChromeOptions options;
     protected WebDriverWait wait;
 
-    public void openBrowser(String site){
+    public void openBrowser(String site) throws Exception{
         options = new ChromeOptions();
         options.addArguments("--window-size\\=1440,900", "--disable-extensions", "--no-sandbox" , "--ignore-ssl-errors");
         drive = new ChromeDriver(options);
         drive.get(site);
+        Thread.sleep(1000);
     }
     public void closeBrowser(){
         drive.quit();

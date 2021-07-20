@@ -3,7 +3,10 @@ package Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionKeywords extends SeleniumSetup{
@@ -21,7 +24,8 @@ public class ActionKeywords extends SeleniumSetup{
 
     public void clickElementXpath(String id_xpath) throws Exception{
         Thread.sleep(1000);
-        findElementXpath(id_xpath).click();
+        Actions act = new Actions(drive);
+        act.moveToElement(findElementXpath(id_xpath)).click().build().perform();
         Thread.sleep(1000);
     }
 
@@ -45,6 +49,19 @@ public class ActionKeywords extends SeleniumSetup{
         if(!find){
             throw new java.lang.RuntimeException("Element is not visible");
         }
+        Thread.sleep(1000);
+    }
+
+    public boolean isElementVisible(String id_xpath) throws Exception{
+        boolean find =  drive.findElement(By.xpath(id_xpath)).isDisplayed();
+        Thread.sleep(1000);
+        return find;
+    }
+
+    public void selectFromDDL(String id_xpath) throws Exception{
+        Thread.sleep(2000);
+        Actions act = new Actions(drive);
+        act.moveToElement(findElementXpath(id_xpath)).click().build().perform();
         Thread.sleep(1000);
     }
 }

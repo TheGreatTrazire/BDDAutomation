@@ -1,6 +1,8 @@
 package stepDefinition;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.Given;
 import Utils.SeleniumSetup;
 import Utils.ActionKeywords;
 import var.VariableXpath;
@@ -26,5 +28,17 @@ public class GeneralStep implements VariableXpath {
         props.load(fis);
         selen.getDriver().get(props.getProperty("site"));
         Thread.sleep(1000);
+    }
+
+    @Then("^User click account header$")
+    public void userclickHeaderAcc() throws Exception{
+        action.clickElementXpath(header_acc);
+    }
+
+    @And("^User click keluar button$")
+    public void userclickKeluarBtn() throws Exception{
+        action.clickElementXpath(btn_keluar);
+        action.clickElementXpath(btn_keluar_confirm);
+        Thread.sleep(2000);
     }
 }

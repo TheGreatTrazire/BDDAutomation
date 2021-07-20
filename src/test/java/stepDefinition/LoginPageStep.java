@@ -1,8 +1,7 @@
 package stepDefinition;
 
 import Utils.ActionKeywords;
-import io.cucumber.java.en.*;
-import org.openqa.selenium.chrome.ChromeDriver;
+import io.cucumber.java.en.Then;
 import var.VariableXpath;
 
 import java.io.FileInputStream;
@@ -39,6 +38,6 @@ public class LoginPageStep implements VariableXpath {
     @Then("^User click Log in button$")
     public void userCLickLoginButton() throws Exception{
         action.clickElementXpath(btn_logon);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
     }
 }

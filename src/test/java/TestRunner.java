@@ -11,7 +11,7 @@ import java.util.Properties;
 @CucumberOptions(
         monochrome = true,
         features = {
-//                "src/test/resources/features/ProductFlight.feature",
+                "src/test/resources/features/ProductFlight.feature",
                 "src/test/resources/features/ProductTrain.feature"
         },
         glue = {
@@ -55,9 +55,9 @@ public class TestRunner {
             this.testNGCucumberRunner.finish();
         }
     }
-//    @AfterTest
-//    public void close()
-//    {
-//        selen.closeBrowser();
-//    }
+    @AfterTest
+    public void close()
+    {
+        selen.closeBrowser();
+    }
 }

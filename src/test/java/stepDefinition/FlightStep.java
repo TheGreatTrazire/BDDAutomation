@@ -60,7 +60,7 @@ public class FlightStep implements VariableXpath {
             throw new java.lang.RuntimeException("adult at least 1");
         }
         else if (adult > 1){
-            for(int i = adult; i > 0; i--){
+            for(int i = adult; i > 1; i--){
                 action.clickElementXpath(inc_adult);
             }
         }

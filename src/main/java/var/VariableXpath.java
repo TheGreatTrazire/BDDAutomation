@@ -71,5 +71,15 @@ public interface VariableXpath {
     String btn_keluar = "//div[@class='account-item-container']/span[text()='Keluar']";
     String btn_keluar_confirm = "//div[@class='logout-button']/button[text()='YA']";
     String btn_optional_train_ok = "//button[text()='OK']";
+    String chkbox_filter_tr_eko = "//label[@for='0-0']";
+    String chkbox_filter_tr_bus = "//label[@for='0-1']";
+    String chkbox_filter_tr_eks = "//label[@for='0-2']";
+    String chkbox_filter_tr_waktu_berangkat_1 = "//label[@for='1-0']";
+    String chkbox_filter_tr_waktu_berangkat_2 = "//label[@for='1-1']";
+    String chkbox_filter_tr_waktu_berangkat_3 = "//label[@for='1-2']";
+    String chkbox_filter_tr_waktu_berangkat_4 = "//label[@for='1-3']";
+    String lbl_tr_pergi = "//*[contains(text(),'Kereta Pergi')]";
+    String btn_pilih_tr = "//*[text()='Pilih']";
+
 }
 
